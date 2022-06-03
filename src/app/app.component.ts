@@ -11,5 +11,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = "ToDo-App";
+  title = "ToDo-App"; 
+
+  /*constructor(){
+    this.title = "This is a constructor changing the title"
+  }*/
+  
 }
