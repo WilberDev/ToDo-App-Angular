@@ -1,0 +1,14 @@
+<section class="mainSection">
+    <section class="itemsSection">
+        <!--
+        <h2 class="appTitle"> My ToDo's </h2>
+        -->
+        <app-add-button-unit (submit)="addTask($event)"> </app-add-button-unit>
+
+        <ul>
+            <li *ngFor="let todoItem of todoList">
+                <app-todo-task-display [task]="todoItem"></app-todo-task-display>
+            </li>
+        </ul>
+    </section>
+</section>
