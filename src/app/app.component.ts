@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoTask } from './interfaces/todo-task';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +12,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = "ToDo-App"; 
-
-  /*constructor(){
-    this.title = "This is a constructor changing the title"
-  }*/
-  
+  title = "ToDo-App";
+  todoList: TodoTask[] = [
+    {title:'Install Node JS'},
+    {title:'Install Angular CLI'},
+    {title:'Create new app'},
+    {title:'Serve app'},
+    {title:'Develop app'},
+    {title:'Deploy app'},
+  ];
 }

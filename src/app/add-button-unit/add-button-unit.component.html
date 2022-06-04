@@ -1,8 +1,5 @@
-<p>
-    add-button-unit works!
-    The title is: {{title}}
-</p>
-<input type="text" [value]="getTitle()">
-<button>Add </button>
 
-{{getTitle()}}
+<input #inputText 
+[value]="title"
+(keyup.enter) ="changeTitle(inputText.value)"> 
+<button (click)="changeTitle(inputText.value)"> Add </button>
