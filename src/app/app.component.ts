@@ -21,4 +21,8 @@ export class AppComponent {
     {title:'Develop app'},
     {title:'Deploy app'},
   ];
+
+  addTask(value: string){
+    this.todoList.push({title: value})
+  }
 }

@@ -2,8 +2,7 @@
   Welcome to {{ title }}!
 </h1>
 
-<app-add-button-unit></app-add-button-unit>
-
+<app-add-button-unit (submit)="addTask($event)"> </app-add-button-unit>
 <ul>
   <li *ngFor="let todoItem of todoList">
     <app-todo-task-display [task]="todoItem"></app-todo-task-display>
