@@ -1,6 +1,6 @@
 .mainSection{
     position: relative;
-    width: 400px;
+    max-width: 600px;
     padding: 30px 30px 15px;
     background-color: white;
     border:1px solid ;
@@ -33,4 +33,11 @@
     border-color: #c4c4c4;
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+.app-title{
+    font-size: 35px;
+    margin: 0 auto;
+    line-height: 10px;
+    margin-bottom: 40px;
+    text-align: center;
 }

@@ -1,6 +1,9 @@
-<input 
-class="taskInput"
-#inputText 
-[value]="title"
-(keyup.enter) ="submitTask($event.target.value)"> 
-<button class="addBtn" (click)="submitTask(inputText.value)"> Add </button>
+<section class="inputSection">
+    <input class="taskInput" #inputText (keyup.enter)="submitTask($event.target.value)">
+    <button class="addBtn" (click)="submitTask(inputText.value)"> Add </button>
+</section>
+
+<!--
+    
+    [value]="title"
+-->

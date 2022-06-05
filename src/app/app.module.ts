@@ -18,7 +18,7 @@ import { TodoListService } from './services/todo-list.service';
     BrowserModule
   ],
   providers: [
-    TodoListService
+    TodoListService,
   ],
   bootstrap: [AppComponent]
 })
