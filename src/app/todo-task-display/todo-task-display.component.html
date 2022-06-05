@@ -1,10 +1,18 @@
 <!--"-->
-<section class="task-title" >
-    <span class="spanTitle" (click)="showSomething(task.title)">
+<section class="task-title">
+    <span [hidden]="showHideTask" class="spanTitle" (click)="editModeCaller()">
         {{ task.title }}
     </span>
-    <button class="deleteBtn" (click)="removeTask()">
-        Delete 
+    <span [hidden]="showHideEditSection" class="edittasksection">
+        <!--<input type="text" #editInput class="inputToedit" contenteditable="true">-->
+        <span class="editionContainer">
+            <span #editInput class="inputToedit" role="textbox" contenteditable="true" alt="Click to Edit">
+                {{task.title}}
+            </span>
+        </span>
+    </span>
+    <button [hidden]="showHideTask" class="deleteBtn" (click)="removeTask()">
+        Delete
     </button>
+    <button [hidden]="showHideEditSection" class="editBtn" (click)="sendToedit()"> save </button>
 </section>
-

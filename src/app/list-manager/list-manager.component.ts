@@ -1,4 +1,4 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit, ViewChild, } from '@angular/core';
 import { TodoTask } from '../interfaces/todo-task';
 import { TodoListService } from '../services/todo-list.service';
 
@@ -8,8 +8,8 @@ import { TodoListService } from '../services/todo-list.service';
   styleUrls: ['./list-manager.component.scss']
 })
 export class ListManagerComponent implements OnInit {
-  title = "ToDo-App";
   
+  title = "ToDo-App";
   todoList: TodoTask[];
 
   //By adding private or public typeScript assign the parameter to it.
@@ -21,7 +21,10 @@ export class ListManagerComponent implements OnInit {
   ngOnInit(): void {
     this.todoList = this.todoListService.getTodoList();
   }
-
+  /*addTaskToInput(task){
+    //this.InputText.nativeElement.value = '';
+    console.log("Task added")
+  }*/
   getTask(title: string): void{
     if (title != null && title != '') {
       this.todoListService.addTask({title});
@@ -31,8 +34,8 @@ export class ListManagerComponent implements OnInit {
     this.todoListService.deleteTask(task);
     //console.log("RemoveMG remove called!" + task.title )
   }
-  editTask(task): void {
-    //this.todoListService.editTask(task);
-    console.log("listMG editTask called!" + task.title )
+  editTask(task, index): void {
+    this.todoListService.editTask(task, index);
+    console.log("listMG editTask called!" + task )
   }
 }

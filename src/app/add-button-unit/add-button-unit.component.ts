@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-add-button-unit',
@@ -15,5 +15,8 @@ export class AddButtonUnitComponent implements OnInit {
   //  this.title = inputText;
    this.submit.emit(inputText)
    console.log(inputText)
+  }
+  addTaskToInput(task){
+    console.log('called on addbtn ts');
   }
 }

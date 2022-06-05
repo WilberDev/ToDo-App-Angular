@@ -1,6 +1,9 @@
-<section class="inputSection">
+<section class="inputSection" >
     <input class="taskInput" #inputText (keyup.enter)="submitTask($event.target.value)">
     <button class="addBtn" (click)="submitTask(inputText.value)"> Add </button>
+    
+    <!--<app-todo-task-display (addToInput)="addTaskToInput($event)" style="display:none;">
+    </app-todo-task-display>-->
 </section>
 
 <!--

@@ -9,8 +9,10 @@
             <li *ngFor="let todoItem of todoList">
                 <app-todo-task-display [task]="todoItem"
                                        (remove)="removeTask($event)"
-                                       (edit)="editTask($event)"> </app-todo-task-display>
+                                       (edit)="editTask($event, $event)"> </app-todo-task-display>
             </li>
         </ul>
     
 </section><section class="itemsSection"></section>
+
+

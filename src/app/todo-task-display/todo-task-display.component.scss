@@ -33,3 +33,32 @@ span{
 .deleteBtn:hover{
     background-color: #f55353;
 }
+.editBtn{
+    background-color: #2196f3;
+    color: #ffffff;
+    padding: 4px 6px;
+    margin-left: 8px;
+    height: 40px;
+    min-width: 57px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    line-height: 24px;
+    cursor: pointer;
+}
+.editionContainer{
+    display: flex;
+    min-width: 470px;
+}
+
+.inputToedit{
+    display: block;
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    min-height: 40px;
+    overflow: hidden;
+    resize: both;
+}
+.inputToedit[contenteditable]::before {
+    color: gray;
+}

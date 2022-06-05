@@ -38,10 +38,10 @@ export class TodoListService {
     this.todoList.splice(index, 1)
     this.saveTaskList();
   }
-  editTask(task: TodoTask): void{
-    const index = this.todoList.indexOf(task)
-    this.todoList.splice(index, 1,{...task})
+  editTask(task, previostask: TodoTask): void{
+    let index = this.todoList.indexOf(previostask)
+    this.todoList.splice(index, 1,{title: task} )
     this.saveTaskList();
-    console.log("called!!")
+    console.log("Task edited! see: " + this.todoList[index] + " " + previostask.title + " " + index)
   }
 }

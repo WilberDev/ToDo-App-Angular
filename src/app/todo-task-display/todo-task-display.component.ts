@@ -1,7 +1,6 @@
-import { Component, Input, OnInit, Output,EventEmitter, ViewChild } from '@angular/core';
-//import { EventEmitter } from 'stream';
+import { Component, Input, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { TodoTask } from '../interfaces/todo-task';
-
+import { TodoListService } from '../services/todo-list.service';
 @Component({
   selector: 'app-todo-task-display',
   templateUrl: './todo-task-display.component.html',
@@ -14,20 +13,25 @@ export class TodoTaskDisplayComponent implements OnInit {
   @Input() task: TodoTask;
   @Output() remove: EventEmitter<TodoTask> = new EventEmitter<TodoTask>();
   @Output() edit: EventEmitter<TodoTask> = new EventEmitter<TodoTask>();
-  @ViewChild('inputText') InputText;
-  constructor() { }
-  
+  @ViewChild('editInput') editInput;
+  showHideTask = false;
+  showHideEditSection = true;
+  constructor(private todoListService: TodoListService) { }
+
   removeTask(): void {
     this.remove.emit(this.task)
   }
-  showSomething(task){
-    //index = 
-    //this.InputText.nativeElement.value = task;
-    //console.log('task clicked!!' + task )
-    this.edit.emit(this.task)
+  sendToedit() {
+    let previostask = this.task
+    let taskTobeEdited = this.editInput.nativeElement.innerText;
+    this.todoListService.editTask(taskTobeEdited, previostask)
+    console.log(taskTobeEdited.title);
+  }
+  editModeCaller() {
+    this.showHideEditSection = !this.showHideEditSection;
+    this.showHideTask = !this.showHideTask;
+    console.log(this.editInput.nativeElement.innerText)
   }
   ngOnInit(): void {
-    console.log("@Input() " + this.task.title)
   }
 }
-//
