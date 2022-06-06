@@ -25,12 +25,10 @@ export class TodoTaskDisplayComponent implements OnInit {
     let previostask = this.task
     let taskTobeEdited = this.editInput.nativeElement.innerText;
     this.todoListService.editTask(taskTobeEdited, previostask)
-    console.log(taskTobeEdited.title);
   }
   editModeCaller() {
     this.showHideEditSection = !this.showHideEditSection;
     this.showHideTask = !this.showHideTask;
-    console.log(this.editInput.nativeElement.innerText)
   }
   ngOnInit(): void {
   }

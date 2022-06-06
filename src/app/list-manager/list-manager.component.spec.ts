@@ -10,16 +10,8 @@ describe('ListManagerComponent', () => {
   TestBed.configureTestingModule({
     declarations: [ListManagerComponent],
     providers: [TodoListService]
-    //providers: [{provide: TodoListService, useValue: TodoListServiceStub}] 
 
   });
-
-  /*beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ListManagerComponent]
-    })
-    .compileComponents();
-  });*/
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ListManagerComponent);
