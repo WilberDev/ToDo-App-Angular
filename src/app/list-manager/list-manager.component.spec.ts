@@ -6,13 +6,21 @@ import { ListManagerComponent } from './list-manager.component';
 
 describe('ListManagerComponent', () => {
   let fixture: ComponentFixture<ListManagerComponent>;
+  let component: ListManagerComponent;
+  let FakeTodoListService
+
+  //jasmine.createSpyObj('todo-listService', ['getTodolist']);
+  //FakeTodoListService.getTodoList.and.returnValue(Observable.of('{title: Wilber meeting}'))
+
+
   /*let FakeTodoListServices = {
     getTodoList: () => Observable.of('{title: "Wilber"}');
   }*/
   //jasmineSpyOjb
-  let component = new ListManagerComponent(null)
 
   beforeEach(() => {
+    FakeTodoListService = {}
+    component = new ListManagerComponent(FakeTodoListService)
 
   })
 

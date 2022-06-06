@@ -19,21 +19,25 @@ describe('TodoListService', () => {
   });
   it('Should add tasks', () => {
     service.addTask(task1)
+    console.log(`AddTask: ${database}`);
+    console.log(database);
     expect(database[0]).toEqual(task1)
     expect(database.length).toEqual(1)
   })
   it('Should delete a task', () => {
+    console.log(`DeleteTAsk: ${database}`);
+    console.log(database);
     service.deleteTask(task1)
     expect(database[0]).toBeUndefined()
   })
 
   it('Should edit a task', () => {
     service.addTask(task1)
-    console.log(database);
-    let previostask = database[0];
+    let previosTask = task1;
+    let index = database.indexOf(previosTask)
     let task1v2 = "Go to pick your cousin at school"
-    service.editTask(task1v2, previostask)
-    expect(database[0].title).toEqual(task1v2)
+    service.editTask(task1v2, previosTask)
+    expect(database[index].title).toEqual(task1v2)
   })
   afterEach(() => {
     localStorage.clear()
