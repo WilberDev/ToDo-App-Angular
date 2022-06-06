@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { createInjectableDefinitionMap } from '@angular/compiler/src/render3/partial/injectable';
+import { Component, OnInit, Output, EventEmitter, Input, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-add-button-unit',
@@ -7,16 +8,13 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class AddButtonUnitComponent implements OnInit {
   @Output() submit: EventEmitter<string> = new EventEmitter<string>();
+  @ViewChild('inputText') inputText;
   title: string = "Hello World";
   ngOnInit(): void {
-  }
 
-  submitTask(inputText: string): void {
-  //  this.title = inputText;
-   this.submit.emit(inputText)
-   console.log(inputText)
   }
-  addTaskToInput(task){
-    console.log('called on addbtn ts');
+  submitTask(inputText: string): void {
+    this.submit.emit(inputText)
+    this.inputText.nativeElement.value = '';
   }
 }
