@@ -9,7 +9,7 @@ import { TodoListService } from '../services/todo-list.service';
 })
 export class ListManagerComponent implements OnInit {
 
-  title = "ToDo-App";
+  title = "My ToDo's";
   todoList: TodoTask[];
 
   //By adding private or public typeScript assign the parameter to it.

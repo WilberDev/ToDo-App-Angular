@@ -1,26 +1,25 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Observable } from 'rxjs';
 import { TodoListService } from '../services/todo-list.service';
 
 import { ListManagerComponent } from './list-manager.component';
 
 describe('ListManagerComponent', () => {
-  let component: ListManagerComponent;
   let fixture: ComponentFixture<ListManagerComponent>;
-  let TodoListServices;
-  TestBed.configureTestingModule({
-    declarations: [ListManagerComponent],
-    providers: [TodoListService]
-
-  });
+  /*let FakeTodoListServices = {
+    getTodoList: () => Observable.of('{title: "Wilber"}');
+  }*/
+  //jasmineSpyOjb
+  let component = new ListManagerComponent(null)
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListManagerComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+
+  })
 
   it('should create', () => {
-    TodoListServices = TestBed.inject(TodoListService)
+    //TodoListServices = TestBed.inject(TodoListService)
+    //const component = new ListManagerComponent(null)
     expect(component).toBeTruthy();
+    expect(component.title).toEqual("My ToDo's")
   });
 });
