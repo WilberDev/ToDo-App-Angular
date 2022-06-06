@@ -1,18 +1,14 @@
 <section class="mainSection">
-    
-        <!-- -->
-        <h2 class="app-title"> My ToDo's </h2>
-       
-        <app-add-button-unit (submit)="getTask($event)"> </app-add-button-unit>
 
-        <ul>
-            <li *ngFor="let todoItem of todoList">
-                <app-todo-task-display [task]="todoItem"
-                                       (remove)="removeTask($event)"
-                                       (edit)="editTask($event, $event)"> </app-todo-task-display>
-            </li>
-        </ul>
-    
-</section><section class="itemsSection"></section>
+    <!-- -->
+    <h2 class="app-title"> My ToDo's </h2>
 
+    <app-add-button-unit (submit)="getTask($event)"> </app-add-button-unit>
 
+    <ul>
+        <li *ngFor="let todoItem of todoList">
+            <app-todo-task-display [task]="todoItem" (remove)="removeTask($event)" (edit)="editTask($event, $event)">
+            </app-todo-task-display>
+        </li>
+    </ul>
+</section>

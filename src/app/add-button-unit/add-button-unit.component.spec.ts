@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TodoListService } from '../services/todo-list.service';
 
 import { AddButtonUnitComponent } from './add-button-unit.component';
 
@@ -8,9 +9,10 @@ describe('AddButtonUnitComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddButtonUnitComponent ]
+      declarations: [AddButtonUnitComponent],
+      providers: [TodoListService]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

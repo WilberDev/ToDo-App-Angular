@@ -4,11 +4,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class StorageService {
- 
-  getData(key: string){
+
+  //This (JSON.parse) allows me to turn back data from Object Notation string to an Array:
+  getData(key: string) {
     return JSON.parse(localStorage.getItem(key));
   }
-  setData(key: string, data: any){
+  //This turns from Array to Object Notation string
+  setData(key: string, data: any) {
     localStorage.setItem(key, JSON.stringify(data));
     console.log(localStorage.length)
   }

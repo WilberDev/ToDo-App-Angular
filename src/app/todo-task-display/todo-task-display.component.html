@@ -1,12 +1,12 @@
 <!--"-->
 <section class="task-title">
-    <span [hidden]="showHideTask" class="spanTitle" (click)="editModeCaller()">
+    <span [hidden]="showHideTask" class="spanTitle" (click)="editModeCaller()" title="Click to Edit">
         {{ task.title }}
     </span>
     <span [hidden]="showHideEditSection" class="edittasksection">
         <!--<input type="text" #editInput class="inputToedit" contenteditable="true">-->
         <span class="editionContainer">
-            <span #editInput class="inputToedit" role="textbox" contenteditable="true" alt="Click to Edit">
+            <span #editInput class="inputToedit" role="textbox" contenteditable="true">
                 {{task.title}}
             </span>
         </span>

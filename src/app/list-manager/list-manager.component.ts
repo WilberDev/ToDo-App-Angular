@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { TodoTask } from '../interfaces/todo-task';
 import { TodoListService } from '../services/todo-list.service';
 
@@ -8,34 +8,30 @@ import { TodoListService } from '../services/todo-list.service';
   styleUrls: ['./list-manager.component.scss']
 })
 export class ListManagerComponent implements OnInit {
-  
+
   title = "ToDo-App";
   todoList: TodoTask[];
 
   //By adding private or public typeScript assign the parameter to it.
   //So, it might work like this. this.todoListService = todoListService;
-  constructor(private todoListService: TodoListService) {}
+  constructor(private todoListService: TodoListService) { }
 
   //This indicate component is done, I used it to add tasks on screen from the database.
   //Using the method getTodolist()
   ngOnInit(): void {
     this.todoList = this.todoListService.getTodoList();
   }
-  /*addTaskToInput(task){
-    //this.InputText.nativeElement.value = '';
-    console.log("Task added")
-  }*/
-  getTask(title: string): void{
+  getTask(title: string): void {
     if (title != null && title != '') {
-      this.todoListService.addTask({title});
+      this.todoListService.addTask({ title });
     }
   }
-  removeTask(task): void{
+  removeTask(task): void {
     this.todoListService.deleteTask(task);
     //console.log("RemoveMG remove called!" + task.title )
   }
   editTask(task, index): void {
     this.todoListService.editTask(task, index);
-    console.log("listMG editTask called!" + task )
+    console.log("listMG editTask called!" + task)
   }
 }

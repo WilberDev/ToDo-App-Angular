@@ -6,6 +6,7 @@ import { AddButtonUnitComponent } from './add-button-unit/add-button-unit.compon
 import { TodoTaskDisplayComponent } from './todo-task-display/todo-task-display.component';
 import { ListManagerComponent } from './list-manager/list-manager.component';
 import { TodoListService } from './services/todo-list.service';
+import { StorageService } from './services/storage.service';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { TodoListService } from './services/todo-list.service';
   ],
   providers: [
     TodoListService,
+    StorageService
   ],
   bootstrap: [AppComponent]
 })
