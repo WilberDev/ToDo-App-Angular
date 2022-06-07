@@ -28,10 +28,9 @@ export class ListManagerComponent implements OnInit {
   }
   removeTask(task): void {
     this.todoListService.deleteTask(task);
-    //console.log("RemoveMG remove called!" + task.title )
+
   }
   editTask(task, index): void {
     this.todoListService.editTask(task, index);
-    console.log("listMG editTask called!" + task)
   }
 }

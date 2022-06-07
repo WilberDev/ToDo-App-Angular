@@ -8,17 +8,6 @@ describe('TodoTaskDisplayComponent', () => {
   let fixture: ComponentFixture<TodoTaskDisplayComponent>;
   let service: TodoListService;
 
-  /*
-    beforeEach(async () => {
-      await TestBed.configureTestingModule({
-        declarations: [TodoTaskDisplayComponent]
-      })
-        .compileComponents();
-      fixture = TestBed.createComponent(TodoTaskDisplayComponent);
-      component = fixture.componentInstance;
-      service = TestBed.inject(TodoListService)
-    });*/
-
   beforeEach(() => {
     component = new TodoTaskDisplayComponent(null)
   })

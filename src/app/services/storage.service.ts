@@ -12,7 +12,6 @@ export class StorageService {
   //This turns from Array to Object Notation string
   setData(key: string, data: any) {
     localStorage.setItem(key, JSON.stringify(data));
-    console.log(localStorage.length)
   }
   constructor() { }
 }

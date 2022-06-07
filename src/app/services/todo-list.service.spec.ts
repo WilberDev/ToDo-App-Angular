@@ -19,14 +19,10 @@ describe('TodoListService', () => {
   });
   it('Should add tasks', () => {
     service.addTask(task1)
-    console.log(`AddTask: ${database}`);
-    console.log(database);
     expect(database[0]).toEqual(task1)
     expect(database.length).toEqual(1)
   })
   it('Should delete a task', () => {
-    console.log(`DeleteTAsk: ${database}`);
-    console.log(database);
     service.deleteTask(task1)
     expect(database[0]).toBeUndefined()
   })
